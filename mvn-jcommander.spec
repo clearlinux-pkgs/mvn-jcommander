@@ -4,16 +4,20 @@
 #
 Name     : mvn-jcommander
 Version  : 1.12
-Release  : 1
+Release  : 2
 URL      : https://github.com/cbeust/jcommander/archive/jcommander-1.12.tar.gz
 Source0  : https://github.com/cbeust/jcommander/archive/jcommander-1.12.tar.gz
 Source1  : https://repo1.maven.org/maven2/com/beust/jcommander/1.12/jcommander-1.12.jar
 Source2  : https://repo1.maven.org/maven2/com/beust/jcommander/1.12/jcommander-1.12.pom
+Source3  : https://repo1.maven.org/maven2/com/beust/jcommander/1.35/jcommander-1.35.jar
+Source4  : https://repo1.maven.org/maven2/com/beust/jcommander/1.35/jcommander-1.35.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: mvn-jcommander-data = %{version}-%{release}
 Requires: mvn-jcommander-license = %{version}-%{release}
+BuildRequires : apache-maven
+BuildRequires : buildreq-mvn
 
 %description
 JCommander
@@ -51,6 +55,12 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.12
 cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.12/jcommander-1.12.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -59,6 +69,8 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/com/beust/jcommander/1.12/jcommander-1.12.jar
 /usr/share/java/.m2/repository/com/beust/jcommander/1.12/jcommander-1.12.pom
+/usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.jar
+/usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.pom
 
 %files license
 %defattr(0644,root,root,0755)
