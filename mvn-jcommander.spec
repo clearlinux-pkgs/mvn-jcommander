@@ -4,13 +4,15 @@
 #
 Name     : mvn-jcommander
 Version  : 1.12
-Release  : 2
+Release  : 3
 URL      : https://github.com/cbeust/jcommander/archive/jcommander-1.12.tar.gz
 Source0  : https://github.com/cbeust/jcommander/archive/jcommander-1.12.tar.gz
-Source1  : https://repo1.maven.org/maven2/com/beust/jcommander/1.12/jcommander-1.12.jar
-Source2  : https://repo1.maven.org/maven2/com/beust/jcommander/1.12/jcommander-1.12.pom
-Source3  : https://repo1.maven.org/maven2/com/beust/jcommander/1.35/jcommander-1.35.jar
-Source4  : https://repo1.maven.org/maven2/com/beust/jcommander/1.35/jcommander-1.35.pom
+Source1  : https://repo.gradle.org/gradle/libs-releases/com/beust/jcommander/1.72/jcommander-1.72.jar
+Source2  : https://repo.gradle.org/gradle/libs-releases/com/beust/jcommander/1.72/jcommander-1.72.pom
+Source3  : https://repo1.maven.org/maven2/com/beust/jcommander/1.12/jcommander-1.12.jar
+Source4  : https://repo1.maven.org/maven2/com/beust/jcommander/1.12/jcommander-1.12.pom
+Source5  : https://repo1.maven.org/maven2/com/beust/jcommander/1.35/jcommander-1.35.jar
+Source6  : https://repo1.maven.org/maven2/com/beust/jcommander/1.35/jcommander-1.35.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -49,17 +51,23 @@ license components for the mvn-jcommander package.
 mkdir -p %{buildroot}/usr/share/package-licenses/mvn-jcommander
 cp license.txt %{buildroot}/usr/share/package-licenses/mvn-jcommander/license.txt
 cp src/main/license/license-header.txt %{buildroot}/usr/share/package-licenses/mvn-jcommander/src_main_license_license-header.txt
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.12
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.12/jcommander-1.12.jar
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.72
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.72
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.12
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.12/jcommander-1.12.pom
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.12/jcommander-1.12.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.12
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.12/jcommander-1.12.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.jar
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35
-cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.pom
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.pom
 
 
 %files
@@ -71,6 +79,8 @@ cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/beust/jcommander/1.
 /usr/share/java/.m2/repository/com/beust/jcommander/1.12/jcommander-1.12.pom
 /usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.jar
 /usr/share/java/.m2/repository/com/beust/jcommander/1.35/jcommander-1.35.pom
+/usr/share/java/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar
+/usr/share/java/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.pom
 
 %files license
 %defattr(0644,root,root,0755)
